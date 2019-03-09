@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package datatype;
+
+
+// note: all these data type is Python style!!
+// string
+message StringMessage {
+string string_field = 1;
+}
+
+// bytes
+message BytesMessage {
+bytes bytes_field = 1;
+}
+
+// bool
+message BoolMessage {
+bool bool_field = 1;
+}
+
+// int
+message IntMessage {
+int32 int_field = 1;
+}
+
+// float
+message FloatMessage {
+float float_field = 1;
+}
+
+// list of int
+message ListIntMessage {
+repeated int32 int_field = 1;
+}
+
+// list of string
+message ListStringMessage {
+repeated string string_field = 1;
+}
+
+// dict[int] => string
+message DictMessagei2s {
+map<int32, string> dict_field = 1;
+}
+
+// dict[string] => string
+message DictMessages2s {
+map<string, string> dict_field = 1;
+}

@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+// python needn't below options
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+option objc_class_prefix = "HLW";
+
+// convention but no-effect in python
+package helloworld;
+
+// The greeting service definition.
+service Greeter {
+    // Sends a greeting
+    // (this annotation will become helloworld_pb2_grpc.py method annotation
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+    // My test rpc method
+    rpc Kakumethod (KakuRequest) returns (KakuResponse) {}
+}
+
+message HelloRequest {
+string name = 1;
+}
+
+message HelloReply {
+string message = 1;
+}
+
+message KakuRequest {
+repeated string message = 1;
+}
+
+message KakuResponse {
+repeated string response = 1;
+int32 msg = 2;
+}
